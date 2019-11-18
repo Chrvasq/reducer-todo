@@ -12,13 +12,9 @@ const ToDoForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (todo.task !== "") {
-      dispatch({ type: "addToDo", payload: addToDo(todo.task) });
+      dispatch({ type: "addToDo", payload: todo.task });
       setToDo({ task: "" });
     }
-  };
-
-  const addToDo = task => {
-    return { item: task, id: new Date(), completed: false };
   };
 
   return (
@@ -33,7 +29,9 @@ const ToDoForm = () => {
         />
         <button>Add</button>
       </form>
-      <button>Clear Completed</button>
+      <button onClick={() => dispatch({ type: "clearCompleted" })}>
+        Clear Completed
+      </button>
     </div>
   );
 };

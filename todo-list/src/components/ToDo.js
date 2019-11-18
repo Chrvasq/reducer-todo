@@ -6,12 +6,12 @@ const ToDo = props => {
 
   return (
     <div
-      className="card"
       onClick={() => {
-        dispatch({});
+        dispatch({ type: "toggleCompleted", payload: props.todo.id });
       }}
+      className={`item${props.todo.completed ? " completed" : ""}`}
     >
-      <p>{props.item}</p>
+      <p>{props.todo.item}</p>
     </div>
   );
 };

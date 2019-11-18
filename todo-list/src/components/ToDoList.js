@@ -7,10 +7,9 @@ const ToDoList = () => {
 
   return (
     <div>
-      {state &&
-        state.map(todo => {
-          return <ToDo key={todo.id} item={todo.item} />;
-        })}
+      {state.todos.map(todo => {
+        return <ToDo key={todo.id} todo={todo} />;
+      })}
     </div>
   );
 };
