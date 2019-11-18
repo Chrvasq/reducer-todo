@@ -6,7 +6,7 @@ const ToDoList = () => {
   const { state } = useContext(StoreContext);
 
   return (
-    <div>
+    <div className='container'>
       {state.todos.map(todo => {
         return <ToDo key={todo.id} todo={todo} />;
       })}

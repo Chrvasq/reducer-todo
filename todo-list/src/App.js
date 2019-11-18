@@ -7,8 +7,8 @@ import ToDoForm from "./components/ToDoForm";
 function App() {
   return (
     <Store>
-      <h2>Welcome to your Todo App!</h2>
       <div className="App">
+        <h2>Welcome to your Todo App!</h2>
         <ToDoList />
         <ToDoForm />
       </div>

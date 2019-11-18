@@ -1,11 +1,36 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .item {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 10px 10px;
+  width: 25%;
+  background: yellow;
   cursor: pointer;
 }
 
 .item.completed {
+  color: white;
   text-decoration: line-through;
+  background: red;
 }
 
 .todoform {
   display: flex;
+}
+
+.todoform button {
+  margin: 0 10px;
 }
