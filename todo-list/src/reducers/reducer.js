@@ -1,3 +1,9 @@
+import {
+  addToDo,
+  toggleCompleted,
+  clearCompleted
+} from "../functions/reducerFunctions";
+
 export const initialState = {
   todos: []
 };
@@ -5,23 +11,11 @@ export const initialState = {
 export const reducer = (state, action) => {
   switch (action.type) {
     case "addToDo":
-      return {
-        todos: [
-          ...state.todos,
-          { item: action.payload, id: Date.now(), completed: false }
-        ]
-      };
+      return addToDo(state, action.payload);
     case "toggleCompleted":
-      return {
-        ...state,
-        todos: state.todos.map(todo =>
-          todo.id === action.payload
-            ? { ...todo, completed: !todo.completed }
-            : todo
-        )
-      };
+      return toggleCompleted(state, action.payload);
     case "clearCompleted":
-      return { todos: state.todos.filter(todo => !todo.completed) };
+      return clearCompleted(state);
     default:
       return state;
   }
