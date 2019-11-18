@@ -1,12 +1,10 @@
-export const initialState = {
-  item: "",
-  completed: false,
-  id: ""
-};
+export const initialState = [
+  { item: "this is a test", completed: false, id: "" }
+];
 
 export const reducer = (state, action) => {
   switch (action.type) {
     default:
-      return state;
+      console.log("Default action needed");
   }
 };
